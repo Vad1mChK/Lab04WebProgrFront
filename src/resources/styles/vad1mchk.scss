@@ -1,0 +1,273 @@
+// Constants
+$TABLET_MIN_WIDTH: 668px;
+$DESKTOP_MIN_WIDTH: 1195px;
+$DEFAULT_MARGIN: 64px;
+$DEFAULT_TRANSITION: 0.2s;
+
+// Font faces
+@mixin font-face($font-family, $file-path, $font-weight: normal, $font-style: normal) {
+  @font-face {
+    font-family: $font-family;
+    src: url($file-path);
+    font-weight: $font-weight;
+    font-style: $font-style;
+  }
+}
+
+// Usage
+@include font-face('JbrMono', '../fonts/JetBrainsMono-Regular.ttf');
+@include font-face('JbrMono', '../fonts/JetBrainsMono-Italic.ttf', normal, italic);
+@include font-face('JbrMono', '../fonts/JetBrainsMono-Bold.ttf', bold);
+@include font-face('JbrMono', '../fonts/JetBrainsMono-BoldItalic.ttf', bold, italic);
+@include font-face('AceAttorney', '../fonts/FOT-UDMarugo-Regular.ttf');
+@include font-face('AceAttorney', '../fonts/FOT-UDMarugo-Bold.otf', bold);
+
+.App {
+  height: 100%;
+  width: 100%;
+  background-size: cover;
+}
+
+// Themes
+@mixin base-theme(
+  $background,
+  $background-gradient,
+  $box-background,
+  $foreground,
+  $accent,
+  $link,
+  $link-active,
+  $button-idle,
+  $button-active
+) {
+  font-size: 14pt;
+
+  background-color: $background;
+  background-image: $background-gradient;
+  background-attachment: fixed;
+  color: $foreground;
+
+h1 {
+  text-align: center;
+
+  &.smiley::after {
+    margin-left: $DEFAULT_MARGIN * 0.5;
+    content: "囧";
+    font-weight: normal;
+    color: $accent;
+  }
+}
+
+p {
+  text-indent: $DEFAULT_MARGIN;
+  text-wrap: normal;
+  text-align: justify;
+}
+
+// `em` will no longer be functioning as italic, we have `i` for that
+em {
+  font-style: normal;
+  color: $accent;
+}
+
+a {
+  text-decoration: none;
+}
+
+a:link, a:visited {
+  color: $link;
+  transition-duration: $DEFAULT_TRANSITION;
+  transition-timing-function: ease-in-out;
+}
+
+a:hover, a:active {
+  color: $link-active;
+}
+
+.box, .centered-box {
+  background-color: $box-background;
+}
+
+input[type=text], input[type=password], select, textarea {
+  background-color: $box-background;
+  color: inherit;
+  font: inherit;
+  border: 2px solid $foreground;
+  border-radius: 8px;
+  padding: $DEFAULT_MARGIN * 0.125;
+}
+
+button, input[type=button], input[type=submit] {
+  background-color: $button-idle;
+  color: inherit;
+  font: inherit;
+  border: 2px solid $foreground;
+  padding: $DEFAULT_MARGIN * 0.25;
+  border-radius: $DEFAULT_MARGIN;
+  transition-duration: $DEFAULT_TRANSITION;
+  transition-timing-function: ease-in-out;
+
+  &:hover, &:active {
+    background-color: $button-active;
+    cursor: pointer;
+  }
+}
+
+.data-table {
+  &, & th, & td {
+    border: 2px solid $foreground;
+    border-collapse: collapse;
+    padding: 8px;
+  }
+  & th, & td {
+    background-color: $box-background;
+  }
+  & th {
+    background-color: fade($accent, 25%);
+  }
+  & tr:nth-child(2n) td:nth-child(2n), & tr:nth-child(2n+1) td:nth-child(2n+1) {
+    background-color: lighten($box-background, 30%);
+  }
+}
+}
+
+.dark-theme {
+  @include base-theme(
+    #0a2441, // background
+    linear-gradient(to bottom, #101010, #0a2441, #2653a7, #078bc9), // gradient
+    #10101080, // box background
+    #f4f4f4, // foreground
+    #f8c718, // accent
+    #2acde8, // link
+    #ff6666, // link-active
+    #2653a7, // button-idle
+    #d6001e // button-active
+  );
+
+  h1.smiley::after {
+    content: "( ͡° ͜ʖ ͡°)"; // Lenny face for dark theme
+  }
+}
+
+.synthwave-theme {
+  @include base-theme(
+    #0a2441, // background
+    linear-gradient(to bottom, #0a2441, #491d8e, #98006c, #d82e8d, #ff6666), // gradient
+    #10101080, // box background
+    #f4f4f4, // foreground
+    #f8c718, // accent
+    #2acde8, // link
+    #ff6666, // link-active
+    #491d8e, // button-idle
+    #d82e8d // button-active
+  );
+
+  h1.smiley::after {
+    content: "ツ"; // Japanese katakana "tu" (smiley)
+  }
+}
+
+.light-theme {
+  @include base-theme(
+    #8fbfe9, // background
+    linear-gradient(to bottom, #558ac5, #8fbfe9, #cda1de, #ea9bc4, #fdf683), // gradient
+    #f4f4f4, // box background
+    #101010, // foreground
+    #1B9822, // accent
+    #2653a7, // link
+    #d6001e, // link-active
+    #f4f4f4, // button-idle
+    #8fbfe9 // button-active
+  );
+
+  h1.smiley::after {
+    content: "囧"; // Chinese "jiong" 囧 character for light theme
+  }
+}
+
+body {
+  font-family: Tahoma, sans-serif;
+}
+
+.box {
+  padding: $DEFAULT_MARGIN;
+  margin: $DEFAULT_MARGIN auto;
+}
+
+.centered-box {
+  display: flex;
+  flex-flow: column nowrap;
+  align-items: center;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  padding: $DEFAULT_MARGIN;
+  width: fit-content;
+  height: fit-content;
+
+  & form {
+    display: flex;
+    flex-flow: column nowrap;
+    align-items: center;
+  }
+}
+
+// Mobile layout-specific styles
+@media screen and (max-width: ($TABLET_MIN_WIDTH - 1)) {
+  body {
+    background-image: none !important;
+  }
+
+  .box, .centered-box {
+    padding: $DEFAULT_MARGIN * 0.5;
+  }
+
+  .box {
+    margin: $DEFAULT_MARGIN * 0.5;
+  }
+}
+
+// Tablet layout-specific styles
+@media screen and (min-width: $TABLET_MIN_WIDTH) and (max-width: ($DESKTOP_MIN_WIDTH - 1)) {
+  body {
+    background-image: none !important;
+  }
+
+  .box, .centered-box {
+    padding: $DEFAULT_MARGIN * 0.75;
+    border-radius: $DEFAULT_MARGIN * 0.75;
+  }
+
+  .box {
+    margin: $DEFAULT_MARGIN * 0.75;
+  }
+}
+
+// Desktop layout-specific styles
+@media screen and (min-width: $DESKTOP_MIN_WIDTH) {
+  body {
+    font-family: JbrMono, 'JetBrains Mono', monospace;
+  }
+
+  h1, h2, h3 {
+    font-family: AceAttorney, sans-serif;
+  }
+
+  .centered-box {
+    max-width: 50%;
+    border-radius: $DEFAULT_MARGIN;
+  }
+
+  .box {
+    // max-width: 70%;
+    border-radius: $DEFAULT_MARGIN;
+  }
+}
+
+#aim {
+  position: relative;
+  #aim-bottom, #aim-top {
+    position: absolute;
+  }
+}

@@ -1,0 +1,88 @@
+{
+  "400": {
+    "statusCode": "400 Bad Request",
+    "aaCharName": "Майлз Эджворт",
+    "aaCharDisplayName": "Эджворт",
+    "message": "Ты не клоун, ты самый настоящий цирк. Переформулируй запрос и попробуй снова, чтобы не позориться и дальше",
+    "aaCharSpriteUrl": "edgeworth_shrug.webp",
+    "aaCharSpriteFlip": true
+  },
+  "401": {
+    "statusCode": "401 Unauthorized",
+    "aaCharName": "Жак Портсман",
+    "aaCharDisplayName": "Портсман",
+    "message": "Хочешь пройти без авторизации? Чувак, даже на баскетбольное поле посторонних не пускают! Сначала зарегистрируйся или войди.",
+    "aaCharSpriteUrl": "portsman_jacket.webp"
+  },
+  "402": {
+    "statusCode": "402 Payment Required",
+    "aaCharName": "Клавьер Гэвин",
+    "aaCharDisplayName": "Клавьер",
+    "message": "Ах, если бы музыка могла оплатить счёт! Но, увы, твой запрос требует чего-то более звучного — платежа!",
+    "aaCharSpriteUrl": "klavier_air_guitar.webp"
+  },
+  "403": {
+    "statusCode": "403 Forbidden",
+    "aaCharName": "Манфред фон Карма",
+    "aaCharDisplayName": "Карма",
+    "message": "Тц... тц... тц... А сюда тебе вход закрыт.",
+    "aaCharSpriteUrl": "manfred_finger_waggle.webp"
+  },
+  "404": {
+    "statusCode": "404 Not Found",
+    "aaCharName": "Манфред фон Карма",
+    "aaCharDisplayName": "Карма",
+    "message": "Тц... тц... тц... За все 40 лет своей идеальной карьеры я ни разу не видел того, что ты ищешь.",
+    "aaCharSpriteUrl": "manfred_arms_crossed.webp"
+  },
+  "405": {
+    "statusCode": "405 Method Not Allowed",
+    "aaCharName": "Франциска фон Карма",
+    "aaCharDisplayName": "фон Карма",
+    "message": "Следи за своими методами! Я не позволю дурацким дуракам обращаться со мной по-дурацки!",
+    "aaCharSpriteUrl": "franziska_whip.webp"
+  },
+  "418": {
+    "statusCode": "418 I'm a teapot",
+    "aaCharName": "Годот",
+    "aaCharDisplayName": "Годот",
+    "message": "Чернее, чем безлунная ночь... Горячее и горче, чем сам ад... Это кофе. А я чайник, и я делаю чай, хотя и пью кофе.",
+    "aaCharSpriteUrl": "godot_coffee_sip.webp"
+  },
+  "429": {
+    "statusCode": "429 Too Many Requests",
+    "aaCharName": "Себастьян Дебест",
+    "aaCharDisplayName": "Дебест",
+    "message": "Может быть, перестанешь посылать слишком много запросов в секунду? Ты используешь какие-то читерские инструменты, что ли?",
+    "aaCharSpriteUrl": "sebastian_frame.webp"
+  },
+  "451": {
+    "statusCode": "451 Unavailable For Legal Reasons",
+    "aaCharName": "Блез Дебест",
+    "aaCharDisplayName": "Блез",
+    "message": "По требованию сверху... ты не сможешь получить доступ к этим бумагам. Зато гляди, как они красиво горят!",
+    "aaCharSpriteUrl": "blaise_burn_paper.webp"
+  },
+  "500": {
+    "statusCode": "500 Internal Server Error",
+    "aaCharName": "Уинстон Пэйн",
+    "aaCharDisplayName": "Пэйн",
+    "message": "На сервере, кажется, произошла ошибка... На моём... идеальном... сервере.",
+    "aaCharSpriteUrl": "payne_sweat.webp"
+  },
+  "501": {
+    "statusCode": "501 Not Implemented",
+    "aaCharName": "Майлз Эджворт",
+    "aaCharDisplayName": "Эджворт",
+    "message": "Н-не реализовано? ГАМШУ! Ты был ответственным за добавление данной функции! Я урезаю тебе зарплату!",
+    "aaCharSpriteUrl": "edgeworth_damage.webp",
+    "aaCharSpriteFlip": true
+  },
+  "503": {
+    "statusCode": "503 Service Temporarily Unavailable",
+    "aaCharName": "Годот",
+    "aaCharDisplayName": "Годот",
+    "message": "П-просто дай мне немного передохнуть, ладно?",
+    "aaCharSpriteUrl": "godot_glitch.webp"
+  }
+}
