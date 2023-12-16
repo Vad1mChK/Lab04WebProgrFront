@@ -8,17 +8,7 @@ export const ShootingGallery = (props: HTMLProps<any>) => {
     const canvas = () => document.getElementById('aim-top') as HTMLCanvasElement
 
     const hit: MouseEventHandler<HTMLCanvasElement> = (e: React.MouseEvent<HTMLCanvasElement>) => {
-        const canv = canvas()
-        if (canv) {
-            const mouseX = e.clientX
-            const mouseY = e.clientY
 
-            const rect = canv.getBoundingClientRect()
-            const canvasX = rect.left
-            const canvasY = rect.top
-
-
-        }
     }
 
     return (
