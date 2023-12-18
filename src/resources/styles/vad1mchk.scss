@@ -4,6 +4,13 @@ $DESKTOP_MIN_WIDTH: 1195px;
 $DEFAULT_MARGIN: 64px;
 $DEFAULT_TRANSITION: 0.2s;
 
+@mixin center-contents {
+  display: flex;
+  justify-content: center;
+  flex-flow: column nowrap;
+  align-items: center;
+}
+
 // Font faces
 @mixin font-face($font-family, $file-path, $font-weight: normal, $font-style: normal) {
   @font-face {
@@ -23,10 +30,7 @@ $DEFAULT_TRANSITION: 0.2s;
 @include font-face('AceAttorney', '../fonts/FOT-UDMarugo-Bold.otf', bold);
 
 html, body, #root {
-  margin: 0;
-  padding: 0;
-  height: 100%;
-  width: 100%;
+  box-sizing: border-box; // Border-box sizing model
 }
 
 // Themes
@@ -95,6 +99,14 @@ html, body, #root {
     background-color: $box-background;
   }
 
+  .box.centering {
+    @include center-contents;
+
+    & form {
+      @include center-contents;
+    }
+  }
+
   input[type=text], input[type=password], select, textarea {
     background-color: $box-background;
     color: inherit;
@@ -114,7 +126,7 @@ html, body, #root {
     }
   }
 
-  button, input[type=button], input[type=submit] {
+  button, input[type=button], input[type=submit], input[type=reset] {
     background-color: $button-idle;
     color: inherit;
     font: inherit;
@@ -150,13 +162,29 @@ html, body, #root {
   #aim {
     position: relative;
     border: 2px solid $foreground;
+    width: fit-content;
+    height: fit-content;
 
-    #aim-bottom, #aim-top {
-      position: absolute;
+    #aim-bottom {
+      z-index: 1;
     }
 
     #aim-top {
+      position: absolute;
+      top: 0;
+      left: 0;
+      z-index: 3;
       cursor: crosshair;
+    }
+
+    #aim-block {
+      position: absolute;
+      top: 0;
+      left: 0;
+      z-index: 4;
+      background-color: $box-background;
+      backdrop-filter: blur(5px);
+      cursor: not-allowed;
     }
   }
 
@@ -170,6 +198,12 @@ html, body, #root {
 
   .success-message {
     color: $success;
+  }
+
+  .button-group {
+    & > button + button, & > input + input {
+      margin-left: $DEFAULT_MARGIN / 2;
+    }
   }
 }
 
@@ -268,7 +302,7 @@ body {
   }
 
   .box {
-    // max-width: 70%;
+    max-width: 70%;
     border-radius: $DEFAULT_MARGIN;
   }
 }

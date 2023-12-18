@@ -62,7 +62,7 @@ const AuthorizationPage: React.FC = () => {
 
 
     return (
-        <div className="dark-theme">
+        <div>
             <Header
                 labDiscipline="Веб-программирование"
                 labNumber={4}
