@@ -12,7 +12,10 @@ export const ShootingGallery = (props: HTMLProps<any>) => {
     }
 
     return (
-        <div id="aim">
+        <div id="aim" style={{
+            width: props.size,
+            height: props.size
+        }}>
             <img id="aim-bottom" src={aimBottom} alt="Canvas" width={props.size} height={props.size}/>
             <canvas id="aim-top" width={props.size} height={props.size} onClick={hit}/>
         </div>
