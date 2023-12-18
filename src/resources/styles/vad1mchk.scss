@@ -22,10 +22,11 @@ $DEFAULT_TRANSITION: 0.2s;
 @include font-face('AceAttorney', '../fonts/FOT-UDMarugo-Regular.ttf');
 @include font-face('AceAttorney', '../fonts/FOT-UDMarugo-Bold.otf', bold);
 
-.App {
+html, body, #root {
+  margin: 0;
+  padding: 0;
   height: 100%;
   width: 100%;
-  background-size: cover;
 }
 
 // Themes
@@ -36,6 +37,7 @@ $DEFAULT_TRANSITION: 0.2s;
   $foreground,
   $accent,
   $error,
+  $success,
   $link,
   $link-active,
   $button-idle,
@@ -63,6 +65,10 @@ $DEFAULT_TRANSITION: 0.2s;
     text-indent: $DEFAULT_MARGIN;
     text-wrap: normal;
     text-align: justify;
+
+    &.no-indent {
+      text-indent: 0;
+    }
   }
 
   // `em` will no longer be functioning as italic, we have `i` for that
@@ -157,6 +163,14 @@ $DEFAULT_TRANSITION: 0.2s;
   label {
     margin-right: $DEFAULT_MARGIN / 2;
   }
+
+  .error-message {
+    color: $error;
+  }
+
+  .success-message {
+    color: $success;
+  }
 }
 
 .dark-theme {
@@ -167,6 +181,7 @@ $DEFAULT_TRANSITION: 0.2s;
     #f4f4f4, // foreground
     #f8c718, // accent
     #ff6666, // error
+    #94bc0e, // success
     #2acde8, // link
     #ff6666, // link-active
     #2653a7, // button-idle
@@ -191,18 +206,18 @@ body {
   display: flex;
   flex-flow: column nowrap;
   align-items: center;
-  position: absolute;
-  top: 50%;
-  left: 50%;
-  transform: translate(-50%, -50%);
   padding: $DEFAULT_MARGIN;
   width: fit-content;
   height: fit-content;
+  margin-left: auto;
+  margin-right: auto;
+
 
   & form {
     display: flex;
     flex-flow: column nowrap;
     align-items: center;
+    gap: $DEFAULT_MARGIN / 2;
   }
 }
 
