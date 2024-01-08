@@ -5,24 +5,7 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="9069f640-bad5-44f0-a037-6f138d7f6274" name="Changes" comment="...">
-      <change afterPath="$PROJECT_DIR$/src/components/ShotTable.tsx" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/package.json" beforeDir="false" afterPath="$PROJECT_DIR$/package.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/AppRoutes.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/AppRoutes.tsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/components/AimOverlay.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/util/zone.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/components/Header.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/Header.tsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/components/ShootingGallery.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/ShootingGallery.tsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/components/ShotForm.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/ShotForm.tsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/components/TextNumberInput.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/TextNumberInput.tsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/pages/AuthorizationPage.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/pages/AuthorizationPage.tsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/pages/ErrorPage.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/pages/ErrorPage.tsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/pages/MainPage.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/pages/MainPage.tsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/resources/styles/vad1mchk.scss" beforeDir="false" afterPath="$PROJECT_DIR$/src/resources/styles/vad1mchk.scss" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/store/actions.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/store/actions.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/store/reducer.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/store/reducer.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/store/store.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/store/store.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/util/DrawnShot.ts" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/util/drawCanvas.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/util/drawCanvas.ts" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -111,7 +94,7 @@
       <workItem from="1703930613597" duration="2503000" />
       <workItem from="1704717312880" duration="655000" />
       <workItem from="1704718034036" duration="758000" />
-      <workItem from="1704718808101" duration="7101000" />
+      <workItem from="1704718808101" duration="7860000" />
     </task>
     <task id="LOCAL-00001" summary="...">
       <option name="closed" value="true" />
@@ -161,7 +144,15 @@
       <option name="project" value="LOCAL" />
       <updated>1702907749529</updated>
     </task>
-    <option name="localTasksCounter" value="7" />
+    <task id="LOCAL-00007" summary="...">
+      <option name="closed" value="true" />
+      <created>1704728493387</created>
+      <option name="number" value="00007" />
+      <option name="presentableId" value="LOCAL-00007" />
+      <option name="project" value="LOCAL" />
+      <updated>1704728493387</updated>
+    </task>
+    <option name="localTasksCounter" value="8" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">

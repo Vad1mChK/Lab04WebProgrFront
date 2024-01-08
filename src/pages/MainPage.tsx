@@ -20,7 +20,7 @@ const MainPage: React.FC = () => {
             }
 
             try {
-                const response = await fetch('http://localhost:19200/lab04-1.0-SNAPSHOT/api/user/whoami', {
+                const response = await fetch('http://localhost:19200/lab04-1.0-SNAPSHOT/api/auth/whoami', {
                     headers: { 'Authorization': `Bearer ${jwtToken}` }
                 });
 
