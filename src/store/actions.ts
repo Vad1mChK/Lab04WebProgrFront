@@ -1,9 +1,9 @@
 import ActionType from "./actionTypes";
-import DrawnShot from "../util/DrawnShot";
+import Shot from "../util/Shot";
 
 export interface AddShotAction {
     type: ActionType.ADD_SHOT
-    payload: DrawnShot
+    payload: Shot
 }
 
 export interface DeleteShotsAction {
@@ -12,12 +12,12 @@ export interface DeleteShotsAction {
 
 export interface RedrawCanvasAction {
     type: ActionType.REDRAW_CANVAS
-    payload: number
+    payload: string
 }
 
 type Action = AddShotAction | DeleteShotsAction | RedrawCanvasAction
 
-export function addShot(shot: DrawnShot): AddShotAction {
+export function addShot(shot: Shot): AddShotAction {
     return {
         type: ActionType.ADD_SHOT,
         payload: shot
@@ -30,7 +30,7 @@ export function deleteShots(): DeleteShotsAction {
     }
 }
 
-export function redrawCanvas(r: number): RedrawCanvasAction {
+export function redrawCanvas(r: string): RedrawCanvasAction {
     return {
         type: ActionType.REDRAW_CANVAS,
         payload: r

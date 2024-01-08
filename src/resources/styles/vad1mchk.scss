@@ -140,6 +140,11 @@ html, body, #root {
       background-color: $button-active;
       cursor: pointer;
     }
+
+    &:disabled {
+      background-color: $box-background;
+      cursor: default;
+    }
   }
 
   .data-table {

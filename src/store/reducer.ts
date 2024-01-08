@@ -1,19 +1,19 @@
-import DrawnShot from "../util/DrawnShot"
 import Action from "./actions"
 import ActionType from "./actionTypes";
+import Shot from "../util/Shot";
 
 export class ReducerState {
-    shots: Array<DrawnShot>
-    radius: number
+    shots: Array<Shot>
+    radius: string
 
-    constructor(shots: Array<DrawnShot>, radius: number) {
+    constructor(shots: Array<Shot>, radius: string) {
         this.shots = shots
         this.radius = radius
     }
 }
 
 export default function reducer(
-    state: ReducerState = new ReducerState([], 1),
+    state: ReducerState = new ReducerState([], localStorage.getItem('r') ?? '1'),
     action: Action
 ): ReducerState {
     switch (action.type) {

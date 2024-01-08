@@ -1,11 +1,11 @@
-import React, { useState } from 'react';
+import React, {useEffect, useState} from 'react';
 import Header from '../components/Header'
 import { useNavigate } from "react-router-dom";
 
 enum AuthMode {
     LOGIN = "LOGIN",
     REGISTER = "REGISTER"
-};
+}
 
 const AuthorizationPage: React.FC = () => {
     const [authMode, setAuthMode] = useState<AuthMode>(AuthMode.LOGIN);
@@ -19,12 +19,22 @@ const AuthorizationPage: React.FC = () => {
 
     const handleUsernameChange = (e: React.ChangeEvent<HTMLInputElement>) => {
         setUsername(e.target.value);
-        setFormValid(e.target.value.trim().length > 0 && password.trim().length > 0);
+        validateForm(e.target.value, password)
     };
 
     const handlePasswordChange = (e: React.ChangeEvent<HTMLInputElement>) => {
         setPassword(e.target.value);
-        setFormValid(e.target.value.trim().length > 0 && username.trim().length > 0);
+        validateForm(username, e.target.value)
+    };
+
+    const validateForm = (username: string, password: string) => {
+        if (username.length === 0 || password.length === 0) {
+            setErrorMessage('Имя пользователя и пароль не могут быть пустыми.');
+            setFormValid(false);
+        } else {
+            setErrorMessage(null);
+            setFormValid(username.length > 0 && password.length > 0);
+        }
     };
 
     const handleSubmit = async (e: React.FormEvent) => {
@@ -66,6 +76,7 @@ const AuthorizationPage: React.FC = () => {
             <Header
                 labDiscipline="Веб-программирование"
                 labNumber={4}
+                variantNumber={412348}
                 studentName="Чайкин Вадим Константинович"
                 studentGroup="P3224"
                 studentNumber="322864"
