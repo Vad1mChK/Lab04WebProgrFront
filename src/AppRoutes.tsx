@@ -1,12 +1,12 @@
 import React from 'react';
-import { BrowserRouter as Router, Route, Routes, Navigate } from 'react-router-dom';
+import { HashRouter as Router, Route, Routes, Navigate } from 'react-router-dom';
 import AuthorizationPage from './pages/AuthorizationPage';
 import MainPage from './pages/MainPage';
 import ErrorPage from './pages/ErrorPage';
 
 const AppRoutes: React.FC = () => {
     return (
-        <Router basename="/~s322864">
+        <Router>
             <Routes>
                 <Route path="/" element={<AuthorizationPage />} />
                 <Route path="/main" element={<MainPage />} />

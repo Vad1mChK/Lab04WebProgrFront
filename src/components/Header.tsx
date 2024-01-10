@@ -1,7 +1,7 @@
 import React from "react";
 import Shot from "../util/Shot";
 import store from "../store/store";
-import {addShot, redrawCanvas} from "../store/actions";
+import {deleteShots} from "../store/actions";
 import {useNavigate} from "react-router-dom";
 
 type HeaderProps = {
@@ -26,7 +26,7 @@ const Header: React.FC<HeaderProps> = ({
     const navigate = useNavigate();
     const logout = () => {
         localStorage.removeItem('jwt')
-        const fetchShots = async () => {
+        const logout = async () => {
             const jwt = localStorage.getItem('jwt'); // Assuming JWT is stored in localStorage
             try {
                 const response = await fetch('http://localhost:19200/lab04-1.0-SNAPSHOT/api/user/logout', {
@@ -37,6 +37,7 @@ const Header: React.FC<HeaderProps> = ({
 
                 if (response.ok) {
                     localStorage.removeItem('jwt');
+                    store.dispatch(deleteShots())
                     console.log('Выход выполнен успешно.')
                 } else {
                     // Handle HTTP errors

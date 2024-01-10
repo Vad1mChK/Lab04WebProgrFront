@@ -3,7 +3,7 @@ import { useNavigate } from "react-router-dom";
 import Header from "../components/Header";
 import ShotForm from "../components/ShotForm";
 import store from '../store/store'
-import {addShot, redrawCanvas} from "../store/actions";
+import {addShot, deleteShots, redrawCanvas} from "../store/actions";
 import Shot from "../util/Shot";
 import ShotTable from "../components/ShotTable";
 
@@ -15,11 +15,13 @@ const MainPage: React.FC = () => {
         const verifyToken = async () => {
             const jwtToken = localStorage.getItem('jwt');
             if (!jwtToken) {
+                store.dispatch(deleteShots());
                 navigate('/');
                 return;
             }
 
             try {
+                store.dispatch(deleteShots());
                 const response = await fetch('http://localhost:19200/lab04-1.0-SNAPSHOT/api/auth/whoami', {
                     headers: { 'Authorization': `Bearer ${jwtToken}` }
                 });
