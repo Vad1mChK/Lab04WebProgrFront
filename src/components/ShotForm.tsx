@@ -79,7 +79,8 @@ const ShotForm = () => {
                     x: x,
                     y: y,
                     r: r,
-                    zone: zoneOffsetSeconds
+                    zone: zoneOffsetSeconds,
+                    round: false
                 })
             });
 

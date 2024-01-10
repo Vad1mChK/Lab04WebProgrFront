@@ -45,7 +45,8 @@ export const ShootingGallery = (props: HTMLProps<any> & { blocked?: boolean }) =
                     x: x,
                     y: y,
                     r: r,
-                    zone: zoneOffsetSeconds
+                    zone: zoneOffsetSeconds,
+                    round: true
                 })
             });
 
