@@ -83,7 +83,12 @@
     "extends": [
       "react-app",
       "react-app/jest"
-    ]
+    ],
+    "env": {
+      "es6": true,
+      "browser": true,
+      "node": true
+    }
   },
   "browserslist": {
     "production": [
@@ -158,5 +163,8 @@
     "presets": [
       "react-app"
     ]
+  },
+  "engines": {
+    "node": ">=6.0.0"
   }
 }
